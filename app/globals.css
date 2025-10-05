@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0); /* White background */
+  --foreground: oklch(0.25 0 0); /* Dark gray for primary text */
+  --card: oklch(0.98 0.02 142); /* Light green for cards */
+  --card-foreground: oklch(0.25 0 0); /* Dark gray for card text */
+  --popover: oklch(1 0 0); /* White for popovers */
+  --popover-foreground: oklch(0.25 0 0); /* Dark gray for popover text */
+  --primary: oklch(0.45 0.15 142); /* Medical green for primary actions */
+  --primary-foreground: oklch(1 0 0); /* White text on primary buttons */
+  --secondary: oklch(0.98 0.02 142); /* Light green for secondary elements */
+  --secondary-foreground: oklch(0.25 0 0); /* Text on secondary elements */
+  --muted: oklch(0.97 0 0); /* Light gray for muted areas */
+  --muted-foreground: oklch(0.45 0 0); /* Medium gray for muted text */
+  --accent: oklch(0.65 0.15 85); /* Bright green accent for alerts */
+  --accent-foreground: oklch(0.25 0 0); /* Text on accent elements */
+  --destructive: oklch(0.65 0.2 25); /* Red for error messages */
+  --destructive-foreground: oklch(1 0 0); /* White text for error messages */
+  --border: oklch(0.9 0 0); /* Light gray for borders */
+  --input: oklch(0.98 0.02 142); /* Light green for input fields */
+  --ring: oklch(0.45 0.15 142 / 0.5); /* Soft green for focus rings */
+  --chart-1: oklch(0.5 0.15 160); /* Emerald for data visualization */
+  --chart-2: oklch(0.55 0.15 150); /* Teal for data visualization */
+  --chart-3: oklch(0.65 0.15 85); /* Bright green for data points */
+  --chart-4: oklch(0.6 0.12 140); /* Light green for supportive data */
+  --chart-5: oklch(0.85 0.08 142); /* Very light green for background data */
+  --radius: 0.5rem; /* Rounded corners for medical feel */
+  --sidebar: oklch(0.98 0.02 142); /* Light green for sidebar */
+  --sidebar-foreground: oklch(0.25 0 0); /* Dark gray for sidebar text */
+  --sidebar-primary: oklch(0.45 0.15 142); /* Primary color for sidebar highlights */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text for sidebar highlights */
+  --sidebar-accent: oklch(0.65 0.15 85); /* Accent color for sidebar alerts */
+  --sidebar-accent-foreground: oklch(0.25 0 0); /* Text on sidebar accent elements */
+  --sidebar-border: oklch(0.9 0 0); /* Light gray for sidebar borders */
+  --sidebar-ring: oklch(0.45 0.15 142 / 0.5); /* Soft green for sidebar focus */
+}
+
+.dark {
+  --background: oklch(0.08 0 0); /* Very dark background */
+  --foreground: oklch(0.95 0 0); /* Light text */
+  --card: oklch(0.12 0.02 142); /* Dark green cards */
+  --card-foreground: oklch(0.95 0 0); /* Light card text */
+  --popover: oklch(0.12 0.02 142); /* Dark green popovers */
+  --popover-foreground: oklch(0.95 0 0); /* Light popover text */
+  --primary: oklch(0.55 0.15 142); /* Brighter green for dark mode */
+  --primary-foreground: oklch(0.08 0 0); /* Dark text on primary */
+  --secondary: oklch(0.15 0.02 142); /* Dark green secondary */
+  --secondary-foreground: oklch(0.95 0 0); /* Light text on secondary */
+  --muted: oklch(0.15 0 0); /* Dark muted areas */
+  --muted-foreground: oklch(0.65 0 0); /* Medium light for muted text */
+  --accent: oklch(0.7 0.15 85); /* Bright accent for dark mode */
+  --accent-foreground: oklch(0.08 0 0); /* Dark text on accent */
+  --destructive: oklch(0.6 0.2 25); /* Red for errors */
+  --destructive-foreground: oklch(0.95 0 0); /* Light text on destructive */
+  --border: oklch(0.2 0 0); /* Dark borders */
+  --input: oklch(0.15 0.02 142); /* Dark green inputs */
+  --ring: oklch(0.55 0.15 142 / 0.5); /* Green focus rings */
+  --chart-1: oklch(0.6 0.15 160); /* Brighter emerald for charts */
+  --chart-2: oklch(0.65 0.15 150); /* Brighter teal */
+  --chart-3: oklch(0.7 0.15 85); /* Bright green */
+  --chart-4: oklch(0.65 0.12 140); /* Medium green */
+  --chart-5: oklch(0.25 0.08 142); /* Dark green background */
+  --sidebar: oklch(0.1 0.02 142); /* Dark sidebar */
+  --sidebar-foreground: oklch(0.95 0 0); /* Light sidebar text */
+  --sidebar-primary: oklch(0.55 0.15 142); /* Bright sidebar primary */
+  --sidebar-primary-foreground: oklch(0.08 0 0); /* Dark text on sidebar primary */
+  --sidebar-accent: oklch(0.7 0.15 85); /* Bright sidebar accent */
+  --sidebar-accent-foreground: oklch(0.08 0 0); /* Dark text on sidebar accent */
+  --sidebar-border: oklch(0.2 0 0); /* Dark sidebar borders */
+  --sidebar-ring: oklch(0.55 0.15 142 / 0.5); /* Green sidebar focus */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
